@@ -41,6 +41,8 @@ app.use(morgan("dev"));
 //route middleware
 app.use("/api/auth", authRouter);
 app.use("/api/nse", nseRouter);
+app.use(cors(corsOpts));
+
 
 //listening the app on the server on port
 const port = process.env.PORT || 8000;
