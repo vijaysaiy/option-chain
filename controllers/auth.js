@@ -35,14 +35,6 @@ export const register = async (req, res) => {
   }
 };
 
-export const testnifty = async (req,res) => {
-  try {
-    return res.status(200).json("143");
-  } catch (error) {
-    
-  }
-}
-
 //User Login route
 export const login = async (req, res) => {
   try {
