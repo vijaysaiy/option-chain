@@ -15,11 +15,11 @@ export const bankNifty = async (req, res) => {
       headers: headers,
       cookie: cookie ? cookie : ""
     });
-    const bankNiftyData = await instance.get(url);
-    return res.status(200).json(bankNiftyData.data);
+    // const bankNiftyData = await instance.get(url);
+    return res.status(200).json(cookie);
   } catch (error) {
     console.log("ERROR IN BANKNIFTY ==>", error);
-    return res.status(500).json({ 'error': error, 'cookie': cookie });
+    return res.status(500).json(error);
   }
 };
 
