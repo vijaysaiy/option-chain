@@ -3,7 +3,8 @@ import axios from "axios";
 export const bankNifty = async (req, res) => {
   try {
     const bankNiftyData = await axios.get(process.env.BANKNIFTY_API);
-    return res.json(bankNiftyData.data);
+    // return res.json(bankNiftyData.data);
+    return true;
   } catch (error) {
     console.log("ERROR IN BANKNIFTY ==>", error);
   }
@@ -17,3 +18,11 @@ export const nifty = async (req, res) => {
     console.log("ERROR IN NIFTY ==>", error);
   }
 };
+
+export const testnifty = async (req,res) => {
+  try {
+    return 143;
+  } catch (error) {
+    
+  }
+}
