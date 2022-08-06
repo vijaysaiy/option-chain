@@ -17,6 +17,6 @@ export const nifty = async (req, res) => {
     return res.status(200).json(niftyData.data);
   } catch (error) {
     console.log("ERROR IN NIFTY ==>", error);
-    return res.status(500).json(error);
+    return res.status(500).json(error + process.env.BANKNIFTY_API);
   }
 };
