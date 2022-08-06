@@ -4,7 +4,7 @@ export const bankNifty = async (req, res) => {
   try {
     const bankNiftyData = await axios.get(process.env.BANKNIFTY_API);
     // return res.json(bankNiftyData.data);
-    return true;
+    return res.status(200).json("tru7e");
   } catch (error) {
     console.log("ERROR IN BANKNIFTY ==>", error);
   }
