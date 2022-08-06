@@ -7,6 +7,7 @@ export const bankNifty = async (req, res) => {
     return res.status(200).json("tru7e");
   } catch (error) {
     console.log("ERROR IN BANKNIFTY ==>", error);
+    return res.status(500).json(error);
   }
 };
 
@@ -16,5 +17,6 @@ export const nifty = async (req, res) => {
     return res.status(200).json(niftyData.data);
   } catch (error) {
     console.log("ERROR IN NIFTY ==>", error);
+    return res.status(500).json(error);
   }
 };
