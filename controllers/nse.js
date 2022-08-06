@@ -13,8 +13,7 @@ export const bankNifty = async (req, res) => {
 
 export const nifty = async (req, res) => {
   try {
-    const niftyData = await axios.get(process.env.NIFTY_API);
-    return res.status(200).json(niftyData.data);
+    return res.status(200).json(process.env.BANKNIFTY_API);
   } catch (error) {
     console.log("ERROR IN NIFTY ==>", error);
     return res.status(500).json(error + process.env.BANKNIFTY_API);
