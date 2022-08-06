@@ -8,21 +8,22 @@ export const bankNifty = async (req, res) => {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
       'accept-language': 'en,gu;q=0.9,hi;q=0.8', 'accept-encoding': 'gzip, deflate, br'
     }
-    const response = await instance.get(url_oc);
-    cookie = response.headers['set-cookie'].join();
     const instance = axios.create({
       baseURL: url_oc,
       headers: headers,
       cookie: cookie ? cookie : ""
     });
-    // const bankNiftyData = await instance.get(url);
-    return res.status(200).json(cookie);
+    const response = await instance.get(url_oc);
+    cookie = response.headers['set-cookie'].join();
+    instance.cookie = cookie;
+    const bankNiftyData = await instance.get(url);
+    return res.status(200).json(bankNiftyData.data);
   } catch (error) {
     console.log("ERROR IN BANKNIFTY ==>", error);
-    return res.status(500).json(cookie);
+    return res.status(500).json(error);
   }
 };
-
+    
 export const nifty = async (req, res) => {
   try {
     const niftyData = await axios.get(process.env.NIFTY_API);
