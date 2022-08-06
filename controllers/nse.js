@@ -18,11 +18,3 @@ export const nifty = async (req, res) => {
     console.log("ERROR IN NIFTY ==>", error);
   }
 };
-
-export const testnifty = async (req,res) => {
-  try {
-    return 143;
-  } catch (error) {
-    
-  }
-}
