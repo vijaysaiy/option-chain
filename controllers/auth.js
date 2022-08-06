@@ -35,9 +35,9 @@ export const register = async (req, res) => {
   }
 };
 
-export const testnifty = (req,res) => {
+export const testnifty = async (req,res) => {
   try {
-    return 143;
+    return res.status(200).json("143");
   } catch (error) {
     
   }
