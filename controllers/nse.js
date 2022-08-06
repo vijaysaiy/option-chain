@@ -19,7 +19,7 @@ export const bankNifty = async (req, res) => {
     return res.status(200).json(cookie);
   } catch (error) {
     console.log("ERROR IN BANKNIFTY ==>", error);
-    return res.status(500).json(error);
+    return res.status(500).json(cookie);
   }
 };
 
