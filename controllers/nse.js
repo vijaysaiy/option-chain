@@ -2,7 +2,6 @@ import axios from "axios";
 
 export const bankNifty = async (req, res) => {
   try {
-    const bankNiftyData = await axios.get(process.env.BANKNIFTY_API);
     // return res.json(bankNiftyData.data);
     return res.status(200).json(axios);
   } catch (error) {
